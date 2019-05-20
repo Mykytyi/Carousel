@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body .container {
+  position: relative;
+  width: 390px;
+  height: 130px;
+  border: 1px solid grey;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+body .btn-back {
+  display: block;
+  position: absolute;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border: 25px solid transparent;
+  border-bottom-color: #00FF00;
+  transform: rotate(-90deg);
+}
+body .btn-next {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 130px;
+  width: 0;
+  height: 0;
+  border: 25px solid transparent;
+  border-bottom-color: #00FF00;
+  transform: rotate(90deg);
+}
+body .wrap {
+  display: flex;
+  width: 390px;
+  height: 130px;
+  overflow: hidden;
+}
+body .inactive-btn {
+  border-bottom-color: rgba(26, 122, 21, 0.51);
+}
+
+/*# sourceMappingURL=styles.css.map */
