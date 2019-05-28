@@ -6,30 +6,23 @@ let nextBtn = document. querySelector('.btn-next');
 let backBtn = document. querySelector('.btn-back');
 let amountOfImg = 3;
 
-let widthOfWrap = (130 * wrap.children.length) - (130 * 3);
+let imgWidth = wrap.children[0].clientWidth;
 
-console.log(wrap.children.length, widthOfWrap);
+let widthOfWrap = (imgWidth * wrap.children.length) - (imgWidth * 3);
 
 nextBtn.addEventListener('click', function () {
-  console.log(wrap.scrollLeft);
-  wrap.scrollLeft += 130 * amountOfImg;
-  if (wrap.scrollLeft !== 0) {
-    backBtn.classList.remove('inactive-btn');
-  }
+  wrap.scrollLeft += imgWidth * amountOfImg;
+  backBtn.classList.remove('inactive-btn');
   if (wrap.scrollLeft === widthOfWrap) {
     nextBtn.classList.add('inactive-btn');
   }
 });
 
 backBtn.addEventListener('click', function () {
-  console.log(wrap.scrollLeft);
-  wrap.scrollLeft -= 130 * amountOfImg;
-  if (wrap.scrollLeft == 0) {
+  wrap.scrollLeft -= imgWidth * amountOfImg;
+  nextBtn.classList.remove('inactive-btn');
+  if (wrap.scrollLeft === 0) {
     backBtn.classList.add('inactive-btn');
-  } else {
-    backBtn.classList.remove('inactive-btn');
-  }
-  if (wrap.scrollLeft !== widthOfWrap) {
-    nextBtn.classList.remove('inactive-btn');
   }
 });
+
